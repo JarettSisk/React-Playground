@@ -1,1 +1,1 @@
-Just a simple playground to test out react concepts.
+Just a simple react starter template to test out react concepts.
