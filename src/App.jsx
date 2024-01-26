@@ -10,7 +10,7 @@ function App() {
 
     useEffect(() => {
         // runs on initial render, and then again on count changes.
-        setMessage(`Youve clicked increment ${count} times!`)
+        setMessage(`You've clicked increment ${count} times!`)
     }, [count]);
 
   return (
