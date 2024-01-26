@@ -7,10 +7,12 @@ function App() {
     const handleIncrement = () => {
       setCount(count + 1);
     }
+
     useEffect(() => {
         // runs on initial render, and then again on count changes.
         setMessage(`Youve clicked increment ${count} times!`)
-    }, [count])
+    }, [count]);
+
   return (
     <>
         <div style={{display: "flex", alignItems: "center", flexDirection: "column", width: "100vw"}}>
