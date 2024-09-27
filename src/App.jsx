@@ -1,23 +1,23 @@
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
+import {FauxGrid} from "./FauxGrid.jsx";
 
 function App() {
-    const [count, setCount] = useState(0)
-    const [message, setMessage] = useState(null);
+    const [externalFilter, setExternalFilter] = useState(false);
+    const [results, setResults] = useState({});
 
-    const handleIncrement = () => {
-      setCount(count + 1);
+    const loadGridData = ({reloadCount, internalFilter}) => {
+        setResults({
+            externalFilter: externalFilter,
+            internalFilter: internalFilter,
+            reloadCount: reloadCount.current
+        })
     }
-
-    useEffect(() => {
-        // runs on initial render, and then again on count changes.
-        setMessage(`You've clicked increment ${count} times!`)
-    }, [count]);
 
   return (
     <>
         <div style={{display: "flex", alignItems: "center", flexDirection: "column", width: "100vw"}}>
-            <h1>{message}</h1>
-            <button onClick={handleIncrement}>INCREMENT</button>
+            <button onClick={() => setExternalFilter(!externalFilter)}>CHANGE EXTERNAL FILTER</button>
+            <FauxGrid reloadDeps={[externalFilter]} data={results}  extLoadFunc={loadGridData}></FauxGrid>
         </div>
 
     </>
