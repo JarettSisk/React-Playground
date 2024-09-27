@@ -22,7 +22,7 @@ export const FauxGrid = ({reloadDeps, extLoadFunc, data }) => {
             <p>External Filter: {JSON.stringify(data?.externalFilter)}</p>
             <p>Internal Filter: {JSON.stringify(data?.internalFilter)}</p>
             <p>ReloadCount: {JSON.stringify(data?.reloadCount)}</p>
-            <button onClick={() => setInternalFilter(!internalFilter)}>CHANGE INTERNAL STATE</button>
+            <button onClick={() => setInternalFilter(!internalFilter)}>CHANGE INTERNAL FILTER</button>
         </>
     );
 };
